@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PriceGap UK</title>
+    <style>
+      :root {
+        --bg: #faf8ff;
+        --surface: #ffffff;
+        --surface-soft: #ecedfa;
+        --text: #191b24;
+        --muted: #424656;
+        --primary: #0f62fe;
+        --outline: #c3c6d8;
+        --success: #006e2a;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+      }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 24px; }
+      .nav {
+        position: sticky;
+        top: 0;
+        background: var(--surface);
+        border-bottom: 1px solid var(--outline);
+      }
+      .nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+      .brand { font-weight: 700; color: var(--primary); font-size: 20px; }
+      .hero { text-align: center; padding: 48px 24px 28px; }
+      h1 { margin: 0 0 12px; font-size: clamp(28px, 4.4vw, 44px); }
+      .sub { margin: 0 0 24px; color: var(--muted); }
+      .search {
+        max-width: 760px;
+        margin: 0 auto 24px;
+        background: var(--surface);
+        border: 1px solid var(--outline);
+        border-radius: 999px;
+        display: flex;
+        padding: 8px;
+        gap: 8px;
+      }
+      .search input {
+        border: 0;
+        outline: 0;
+        font-size: 16px;
+        padding: 12px 16px;
+        flex: 1;
+        min-width: 0;
+        background: transparent;
+      }
+      .search button {
+        border: 0;
+        border-radius: 999px;
+        background: var(--primary);
+        color: #fff;
+        padding: 0 18px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .pills { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .pill {
+        border: 1px solid var(--outline);
+        background: var(--surface);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 16px;
+        margin-top: 28px;
+      }
+      .card {
+        border: 1px solid var(--outline);
+        border-radius: 12px;
+        background: var(--surface);
+        padding: 16px;
+      }
+      .label {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: .04em;
+        text-transform: uppercase;
+        color: var(--success);
+        background: #e7f8ee;
+        border-radius: 6px;
+        padding: 4px 8px;
+      }
+      .title { margin: 12px 0 8px; font-size: 18px; }
+      .muted { color: var(--muted); font-size: 14px; }
+      .price-row { margin-top: 12px; display: flex; align-items: baseline; gap: 8px; }
+      .price { font-size: 28px; font-weight: 700; line-height: 1; }
+      .old { color: #737687; text-decoration: line-through; }
+      .cta {
+        margin-top: 12px;
+        display: inline-block;
+        text-decoration: none;
+        color: var(--primary);
+        font-weight: 600;
+      }
+      .footer {
+        border-top: 1px solid var(--outline);
+        margin-top: 36px;
+        padding: 24px 0 36px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="nav">
+      <div class="wrap">
+        <div class="brand">PriceGap</div>
+        <div class="muted">UK Comparison Prototype</div>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="hero">
+        <h1>Compare prices, deals and cashback across UK stores</h1>
+        <p class="sub">Prototype deployed from the new <strong>pricegap</strong> repository.</p>
+        <div class="search">
+          <input value="Wireless noise cancelling headphones" readonly />
+          <button>Search</button>
+        </div>
+        <div class="pills">
+          <span class="pill">Fashion</span>
+          <span class="pill">Tech</span>
+          <span class="pill">Home</span>
+        </div>
+      </section>
+      <section class="grid">
+        <article class="card">
+          <span class="label">Best Value</span>
+          <h2 class="title">Sony WH-1000XM5</h2>
+          <p class="muted">Best price from Amazon UK, +3% cashback</p>
+          <div class="price-row">
+            <span class="price">£279</span>
+            <span class="old">£319</span>
+          </div>
+          <a class="cta" href="https://github.com/ZidanZinadin/pricegap">View Source</a>
+        </article>
+        <article class="card">
+          <span class="label">Discount</span>
+          <h2 class="title">Bose QuietComfort 45</h2>
+          <p class="muted">Best price from Currys</p>
+          <div class="price-row">
+            <span class="price">£220</span>
+            <span class="old">£260</span>
+          </div>
+          <a class="cta" href="https://github.com/ZidanZinadin/pricegap">Compare Stores</a>
+        </article>
+        <article class="card">
+          <span class="label">Tracked</span>
+          <h2 class="title">Sennheiser Momentum 4</h2>
+          <p class="muted">Best price from Argos, +1.5% cashback</p>
+          <div class="price-row">
+            <span class="price">£299</span>
+          </div>
+          <a class="cta" href="https://github.com/ZidanZinadin/pricegap">Track Alert</a>
+        </article>
+      </section>
+      <section class="footer">
+        © 2026 PriceGap UK
+      </section>
+    </main>
+  </body>
+</html>
